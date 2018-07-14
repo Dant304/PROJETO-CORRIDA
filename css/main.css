@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: whitesmoke;
+}
+img{
+    height: 400px;
+}
+#menu{
+    margin: 30px;
+    margin-left: 35%;
+}
+#cadastrarButton, #corridasButton{
+    margin-left: 80px;
+    border-radius: 10px;
+    background-color: rgb(64, 64, 119);
+    padding: 10px;
+}
+#cadastrarButton:hover, #corridasButton:hover{
+    background-color: rgb(163, 218, 163);
+    cursor: pointer;
+}
+h1{
+    text-align: center;
+}

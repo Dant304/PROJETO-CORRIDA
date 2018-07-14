@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CADASTRO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/cadastro.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/cadastro.js"></script>
+</head>
+<body ng-app="">
+    <hgroup>
+        <h1>Página de Cadastro</h1>
+        
+    </hgroup>
+    <hr>
+ <nav>
+    <button id="buttonMotorista">Motorista</button>
+     <button id="buttonPassageiro">Passageiro</button>
+     <button type="button" onclick="sair()" style="float: right; background-color: red; width: 100px; padding: 10px">Sair</button>
+ </nav>
+ <hr>   
+    <div id="campoMotorista">
+        <fieldset id="formMotorista">
+                <form action="./Php/cadastrarM.php" method="POST">
+                    <h3>Motorista</h3>
+                    <img src="./Assets/motorLogo.png"><br>
+                   <input type="text" name="nome" placeholder="Nome do Motorista" id="nomeM" ng-model="nomeM" required/><br>
+                   <input type="date" name="data" placeholder="Data de nascimento" id="dataM" ng-model="dataM" required/><br>
+                   <input type="text" name="cpf" placeholder="C.P.F" id="cpfM" ng-model="cpfM"  required/><br>
+                   <label for="select" required>Modelo do carro:</label>
+                   <select ng-model="modeloCarro" name="modelo">
+                       <option value="ford">FORD</option>
+                       <option value="chevrolet">CHEVROLET</option>
+                       <option value="renault">RENAULT</option>
+                       <option value="astra">ASTRA</option>
+                       <option value="civic">CIVIC</option>
+                   </select><br>
+                   <label for="select">Status</label>
+                   <select ng-model="statusM" required name="status">
+                       <option value="ativo">ATIVO</option>
+                       <option value="inativo">INATIVO</option>
+                   </select><br>
+                   <label for="select">Gênero:</label>
+                   <select ng-model="generoM" required name="genero">
+                       <option value="masculino">MASCULINO</option>
+                       <option value="feminino">FEMININO</option>
+                       <option value="outro">Prefiro não dizer</option>
+                   </select><br>
+                   <button type="submit">Cadastrar</button> <button type="reset">Cancelar</button>
+                </form>
+            </fieldset>
+               
+                   <fieldset class="folha">
+                       <h3>NOME: </h3><p ng-bind="nomeM | uppercase"></p>
+                       <h3>DATA: </h3><p ng-bind="dataM | date: 'dd-MM-yyyy'"></p>
+                      <h3>CPF: </h3></h3> <p ng-bind="cpfM"></p>
+                       <h3>MODELO DO CARRO: </h3><p ng-bind="modeloCarro | uppercase"></p>
+                       <h3>STATUS: </h3><p ng-bind="statusM | uppercase" id="statusP"></p>
+                       <h3>GÊNERO: </h3><p ng-bind="generoM | uppercase"></p>
+                   </fieldset>
+               
+     </div>
+     <div id="campoPassageiro" ng-hide="campoPassageiro">
+         <fieldset id="formPassageiro">
+             <form action="./Php/cadastrarP.php" method="POST">
+                   <h3>Passageiro</h3>
+                   <img src="./Assets/personlogo.png"><br>
+             <input type="text" name="nome" placeholder="Nome do Passageiro" ng-model="nomeP" required/><br>
+             <input type="date" name="data" ng-model="dataP" required/><br>
+             <input type="text" name="cpf" placeholder="C.P.F" ng-model="cpfP" required /><br>
+             <label for="select">Gênero:</label>
+             <select ng-model="generoP" required name="genero">
+                 <option value="masculino">MASCULINO</option>
+                 <option value="feminino">FEMININO</option>
+                 <option value="outro">Prefiro não dizer</option>
+             </select><br>
+             <button type="submit">Cadastrar</button> <button type="reset">Cancelar</button>
+             </form>
+           
+         </fieldset>
+         
+             <fieldset class="folha">
+                    <h3>NOME: </h3><p ng-bind="nomeP | uppercase"></p>
+                    <h3>DATA: </h3><p ng-bind="dataP | date: 'dd-MM-yyyy'"></p>
+                    <h3>CPF: </h3></h3> <p ng-bind="cpfP"></p>
+                    <h3>GÊNERO: </h3><p ng-bind="generoP | uppercase"></p>
+             </fieldset>
+         
+     </div>
+</body>
+</html>

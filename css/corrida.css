@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(255, 252, 238);
+}
+h1{
+text-align: center;
+}
+#dados{
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgb(169, 182, 182);
+    width: 300px;
+}
+strong{
+    background-color: rgb(255, 255, 255);
+    color: red;
+    margin: 15px;
+    border-radius: 5px;
+}
+button{
+    border-radius: 10px;
+    padding: 10px;
+}
+button:hover{
+    cursor: pointer;
+}
+#sair{
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+td{
+   background-color: white;
+   text-transform: uppercase;
+   width: 100px;
+}
+button[type="submit"]{
+    margin-top: 20px;
+    background-color: rgb(71, 71, 105);
+}
+button[type="reset"]{
+    background-color: tomato;
+    margin-top: 20px;
+}
+#formulario{
+    background-color: grey;
+    border-radius: 10px;
+    align-content: center;
+}
+select{
+    width: 200px;
+}
